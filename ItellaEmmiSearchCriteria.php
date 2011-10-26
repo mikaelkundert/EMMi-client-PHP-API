@@ -85,6 +85,42 @@ class ItellaEmmiSearchCriteriaKeyword extends ItellaEmmiSearchCriteria {
 }
 
 
+
+class ItellaEmmiSearchCriteriaAdditionalField extends ItellaEmmiSearchCriteria {
+  public function __construct($fieldId = 0, $fieldType = self::FIELD_TYPE_SINGLE_LINE_STRING) {
+    parent::__construct();
+    $this->SearchableField = 7;
+    $this->PropertyFieldId = $fieldId;
+    $this->PropertyFieldType = $fieldType;
+  }
+}
+
+
+
+class ItellaEmmiSearchCriteriaCode extends ItellaEmmiSearchCriteriaAdditionalField {
+  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
+    parent::__construct();
+    self::setStringSearchOption($type);
+    $this->SearchableField = 10;
+    $value = is_array($value) ? $value : array($value);
+    $this->StringValues = $value;
+  }
+}
+
+
+
+class ItellaEmmiSearchCriteriaColorNr extends ItellaEmmiSearchCriteriaAdditionalField {
+  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
+    parent::__construct();
+    self::setStringSearchOption($type);
+    $this->SearchableField = 11;
+    $value = is_array($value) ? $value : array($value);
+    $this->StringValues = $value;
+  }
+}
+
+
+
 class ItellaEmmiSearchCriteriaModifiedBetween extends ItellaEmmiSearchCriteria {
    public function __construct($unixtime1, $unixtime2) {
     parent::__construct();
@@ -126,42 +162,6 @@ class ItellaEmmiSearchCriteriaModifiedExactly extends ItellaEmmiSearchCriteria {
     $this->DateTimeValues = array(array("UnixTimeStamp" => $unixtime));
   }
 }
-
-
-
-class ItellaEmmiSearchCriteriaAdditionalField extends ItellaEmmiSearchCriteria {
-  public function __construct($fieldId = 0, $fieldType = self::FIELD_TYPE_SINGLE_LINE_STRING) {
-    parent::__construct();
-    $this->SearchableField = 7;
-    $this->PropertyFieldId = $fieldId;
-    $this->PropertyFieldType = $fieldType;
-  }
-}
-
-
-
-class ItellaEmmiSearchCriteriaCode extends ItellaEmmiSearchCriteriaAdditionalField {
-  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
-    parent::__construct();
-    self::setStringSearchOption($type);
-    $this->SearchableField = 10;
-    $value = is_array($value) ? $value : array($value);
-    $this->StringValues = $value;
-  }
-}
-
-
-
-class ItellaEmmiSearchCriteriaColorNr extends ItellaEmmiSearchCriteriaAdditionalField {
-  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
-    parent::__construct();
-    self::setStringSearchOption($type);
-    $this->SearchableField = 11;
-    $value = is_array($value) ? $value : array($value);
-    $this->StringValues = $value;
-  }
-}
-
 
 
 
