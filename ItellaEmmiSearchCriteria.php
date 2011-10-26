@@ -67,6 +67,17 @@ class ItellaEmmiSearchCriteria {
 
 
 
+class ItellaEmmiSearchCriteriaName extends ItellaEmmiSearchCriteria {
+   public function __construct($name, $type = self::STRING_OPTION_CONTAINS) {
+    parent::__construct();
+    self::setStringSearchOption($type);
+    $this->SearchableField = 1;
+    $this->StringValues = array($name);
+  }
+}
+
+
+
 class ItellaEmmiSearchCriteriaKeyword extends ItellaEmmiSearchCriteria {
   public function __construct($value, $field = NULL, $type = self::STRING_OPTION_CONTAINS) {
     parent::__construct();
