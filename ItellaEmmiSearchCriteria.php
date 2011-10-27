@@ -110,9 +110,8 @@ class ItellaEmmiSearchCriteriaAdditionalField extends ItellaEmmiSearchCriteria {
 
 class ItellaEmmiSearchCriteriaCode extends ItellaEmmiSearchCriteriaAdditionalField {
   public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
-    parent::__construct();
+    parent::__construct(10);
     self::setStringSearchOption($type);
-    $this->SearchableField = 10;
     $value = is_array($value) ? $value : array($value);
     $this->StringValues = $value;
   }
@@ -122,9 +121,8 @@ class ItellaEmmiSearchCriteriaCode extends ItellaEmmiSearchCriteriaAdditionalFie
 
 class ItellaEmmiSearchCriteriaColorNr extends ItellaEmmiSearchCriteriaAdditionalField {
   public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
-    parent::__construct();
+    parent::__construct(11);
     self::setStringSearchOption($type);
-    $this->SearchableField = 11;
     $value = is_array($value) ? $value : array($value);
     $this->StringValues = $value;
   }
