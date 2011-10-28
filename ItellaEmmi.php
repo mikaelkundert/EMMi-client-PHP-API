@@ -30,7 +30,7 @@ class ItellaEmmi {
    * @param string $service_id
    * @param string $username
    * @param string $password
-   * @param string $wsdl
+   * @param string $service_uri
    */
   public function __construct($service_id, $username, $password, $service_uri) {
     $this->service_id = $service_id;
@@ -179,11 +179,11 @@ class ItellaEmmi {
         return self::FILE_NOT_FOUND;
 
       case 591:
-        // käynnistetty
+        // started
       case 592:
-        // odottaa
+        // waiting
       case 593:
-        // käynnissä
+        // in progress
         return self::FILE_WAIT;
     }
 
