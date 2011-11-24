@@ -108,25 +108,19 @@ class ItellaEmmiSearchCriteriaAdditionalField extends ItellaEmmiSearchCriteria {
 
 
 
-class ItellaEmmiSearchCriteriaCode extends ItellaEmmiSearchCriteriaAdditionalField {
-  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
-    parent::__construct(10);
-    self::setStringSearchOption($type);
-    $value = is_array($value) ? $value : array($value);
-    $this->StringValues = $value;
-  }
-}
-
-
-
-class ItellaEmmiSearchCriteriaColorNr extends ItellaEmmiSearchCriteriaAdditionalField {
-  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
-    parent::__construct(11);
-    self::setStringSearchOption($type);
-    $value = is_array($value) ? $value : array($value);
-    $this->StringValues = $value;
-  }
-}
+/**
+ * Example of how to create an additional field. Additional field property id
+ * is 10.
+ * 
+ * class ItellaEmmiSearchCriteriaCode extends ItellaEmmiSearchCriteriaAdditionalField {
+ *  public function __construct($value, $type = self::STRING_OPTION_CONTAINS) {
+ *    parent::__construct(10);
+ *    self::setStringSearchOption($type);
+ *    $value = is_array($value) ? $value : array($value);
+ *    $this->StringValues = $value;
+ *  }
+ *}
+ */
 
 
 
