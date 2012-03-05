@@ -131,7 +131,7 @@ class ItellaEmmiSearchCriteriaModifiedBetween extends ItellaEmmiSearchCriteria {
     parent::__construct();
     $this->SearchableField = 13;
     $this->NumberSearchOption = 1;
-    $this->DateTimeValues = array(array("UnixTimeStamp" => $unixtime), array("UnixTimeStamp" => $unixtime));
+    $this->DateTimeValues = array(array("UnixTimeStamp" => $unixtime1), array("UnixTimeStamp" => $unixtime2));
   }
 }
 
