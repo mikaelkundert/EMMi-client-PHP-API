@@ -17,6 +17,7 @@ class ItellaEmmiSearchCriteria {
   public $DateTimeValues;
   public $NumberSearchOption;
   public $IncludeSubFolders;
+  public $NotCriteria;
   
   const STRING_OPTION_CONTAINS  = 1;
   const STRING_OPTION_WORDS     = 2;
@@ -52,6 +53,7 @@ class ItellaEmmiSearchCriteria {
     $this->DateTimeValues     = false;
     $this->NumberSearchOption = false;
     $this->IncludeSubFolders  = false;
+    $this->NotCriteria        = false;
   }
   
   public function setStringSearchOption($type = self::STRING_OPTION_CONTAINS) {
