@@ -125,7 +125,7 @@ class ItellaEmmi {
       "sid" => $this->session_id,
     );
 
-    return $this->file_download_uri . "?" . http_build_query($data);
+    return $this->file_download_uri . "?" . http_build_query($data, '', '&');
   }
 
 
