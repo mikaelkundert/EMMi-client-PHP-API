@@ -187,11 +187,11 @@ class ItellaEmmi {
         return self::FILE_WAIT;
     }
 
-    if (!file_put_contents($filename, $contents)) {
-      return FALSE;
+    if ($code == 200 && file_put_contents($filename, $contents)) {
+      return $filename;
     }
 
-    return $filename;
+    return FALSE;
 
   }
 
