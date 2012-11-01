@@ -1,0 +1,8 @@
+
+Itella EMMi is a PHP interface to itellas media bank.
+
+http://www.emmi.fi/portaali/ (See section conserning Mediapankki)
+http://www.emmi.fi/
+
+For an example of use see test.php.
+
